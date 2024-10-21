@@ -1,42 +1,63 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.app {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.gameboard {
+	width: 300px;
+	height: 300px;
+	display: flex;
+	flex-wrap: wrap;
+	border: solid 1px black;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.square {
+	width: 100px;
+	height: 100px;
+	border: solid 1px black;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.circle {
+	height: 90px;
+	width: 90px;
+	border-radius: 50%;
+	border: solid 10px green;
+	box-sizing: border-box;
 }
 
-.card {
-  padding: 2em;
+.cross {
+	width: 90px;
+	height: 90px;
+	position: relative;
+	transform: rotate(45deg);
 }
 
-.read-the-docs {
-  color: #888;
+.cross:before,
+.cross:after {
+	content: "";
+	position: absolute;
+	background-color: red;
+}
+
+.cross:before {
+	left: 50%;
+	width: 30%;
+	height: 100%;
+	margin-left: -15%;
+}
+
+.cross:after {
+	top: 50%;
+	height: 30%;
+	width: 100%;
+	margin-top: -15%;
 }
